@@ -1,6 +1,8 @@
 {
   "name": "CommunitiesV4",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "944dd1a3"
 }
