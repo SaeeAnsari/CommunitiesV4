@@ -24,7 +24,7 @@ import 'rxjs/add/operator/switchMap';
   for more info on providers and Angular 2 DI.
 */
 @Injectable({ providedIn: 'root' })
-export class OpenGraphServiceProvider {
+export class OpenGraphServiceProvider { 
 
   headers: Headers;
 
