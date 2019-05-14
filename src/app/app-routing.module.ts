@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'community', loadChildren: './pages/community/community.module#CommunityPageModule' },
   { path: 'event-feed', loadChildren: './pages/event-feed/event-feed.module#EventFeedPageModule' },
   { path: 'live-feed', loadChildren: './pages/live-feed/live-feed.module#LiveFeedPageModule' },
+  { path: 'live-feed/:id', loadChildren: './pages/live-feed/live-feed.module#LiveFeedPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'media-display', loadChildren: './pages/media-display/media-display.module#MediaDisplayPageModule' },
   { path: 'my-communities', loadChildren: './pages/my-communities/my-communities.module#MyCommunitiesPageModule' },
