@@ -1,3 +1,9 @@
-<p>
-  image-upload works!
-</p>
+<div class="fileUpload btn btn-outline-info md-new-comment" (click)="launchCamera()">
+  <span >
+      <i class="material-icons">add_a_photo</i>
+  </span>
+</div>
+
+<span *ngIf="replaceIconWithImage">
+  <img src="{{cloudFileURL}}" alt="">
+</span>
