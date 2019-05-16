@@ -1,14 +1,78 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { UserService } from '../../providers/user-service';
+import { NewCommentComponentComponent } from '../new-comment-component/new-comment-component.component';
+import {NewEventComponent} from '../new-event/new-event.component';
 
+
+import { ModalController } from '@ionic/angular';
+
+
+/**
+ * Generated class for the MarkerNewPostComponent component.
+ *
+ * See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+ * for more info on Angular Components.
+ */
 @Component({
-  selector: 'app-marker-new-post-component',
-  templateUrl: './marker-new-post-component.component.html',
-  styleUrls: ['./marker-new-post-component.component.scss'],
+  selector: 'app-marker-new-post',
+  templateUrl: 'marker-new-post-component.html',
+  providers: [UserService]
 })
-export class MarkerNewPostComponentComponent implements OnInit {
+export class MarkerNewPostComponent implements OnInit {
 
-  constructor() { }
+  @Input() StoryID: number = 0;
+  @Input() FeedType: string;
+  @Input() CommunityID: number = 0;
+  @Output() OnStorySave = new EventEmitter();
 
-  ngOnInit() {}
+  private user;
+  constructor(private _userService: UserService, public modalCtrl: ModalController) { }
+
+  ngOnInit() {
+    this.loadNewPostMarker();
+  }
+
+  loadNewPostMarker() {
+    this._userService.getLoggedinInUser().subscribe(s => {
+
+      this.user = s;
+
+    });
+  }
+
+  async redirecttoNewPost() {
+
+    if(this.FeedType == "Event"){
+
+      let eventsModal = await this.modalCtrl.create({component:NewEventComponent, 
+      componentProps:{ storyID: this.StoryID, FeedType: this.FeedType }}); 
+        
+
+        eventsModal.onDidDismiss().then(data => {
+
+        if (data) {
+          this.StoryID = data.data.storyID;
+          this.OnStorySave.emit();
+        }
+      });
+      eventsModal.present();
+    }
+    else{
+
+    
+    
+      let commentsModal = await this.modalCtrl.create({component: NewCommentComponentComponent,
+      componentProps: { storyID: this.StoryID, FeedType: this.FeedType ,CommunityID: this.CommunityID }});  
+
+      commentsModal.onDidDismiss().then(data => {
+
+        if (data) {
+          this.StoryID = data.data.storyID;
+          this.OnStorySave.emit();
+        }
+      });
+      commentsModal.present();
+    }
+  }
 
 }
