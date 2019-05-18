@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { UserService } from '../../providers/user-service';
-import { NewCommentComponentComponent } from '../new-comment-component/new-comment-component.component';
+import { NewCommentComponent } from '../new-comment-component/new-comment-component.component';
 import {NewEventComponent} from '../new-event/new-event.component';
 
 
@@ -61,7 +61,7 @@ export class MarkerNewPostComponent implements OnInit {
 
     
     
-      let commentsModal = await this.modalCtrl.create({component: NewCommentComponentComponent,
+      let commentsModal = await this.modalCtrl.create({component: NewCommentComponent,
       componentProps: { storyID: this.StoryID, FeedType: this.FeedType ,CommunityID: this.CommunityID }});  
 
       commentsModal.onDidDismiss().then(data => {
