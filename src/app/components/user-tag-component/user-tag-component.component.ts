@@ -1,14 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , Input} from '@angular/core';
 
+/**
+ * Generated class for the UserTagComponent component.
+ *
+ * See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+ * for more info on Angular Components.
+ */
 @Component({
-  selector: 'app-user-tag-component',
-  templateUrl: './user-tag-component.component.html',
-  styleUrls: ['./user-tag-component.component.scss'],
+  selector: 'app-user-tag',
+  templateUrl: 'user-tag-component.html'
 })
-export class UserTagComponentComponent implements OnInit {
+export class UserTagComponent  {
+
+  @Input() ID: number;
+  @Input() PostDate:Date;
+  @Input() Name: string;
+  @Input() ImageURL:string;
 
   constructor() { }
 
-  ngOnInit() {}
 
+  externalLoadUser(userID: number, displayName: string, ImageURL: string){
+    this.ID = userID;
+    this.Name = displayName;
+    this.ImageURL = ImageURL;
+  } 
 }
