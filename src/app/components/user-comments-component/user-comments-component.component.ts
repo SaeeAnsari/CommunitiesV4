@@ -17,7 +17,7 @@ import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-na
  */
 @Component({
   selector: 'app-user-comments',
-  templateUrl: 'user-comments-component.html',
+  templateUrl: 'user-comments-component.component.html',
   providers: [UserService, CommentService, StoryService, InAppBrowser, FirebaseMessagingProvider]
 })
 export class UserCommentsComponent implements OnInit {

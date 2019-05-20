@@ -18,7 +18,7 @@ import { PopoverController } from '@ionic/angular';
  */
 @Component({
   selector: 'login-component',
-  templateUrl: 'login-component.html',
+  templateUrl: 'login-component.component.html',
   providers: [UserService]
 })
 export class LoginComponent {

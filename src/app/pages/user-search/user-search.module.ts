@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MediaDisplayPage } from './media-display.page';
+import { UserSearchPage } from './user-search.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MediaDisplayPage
+    component: UserSearchPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MediaDisplayPage]
+  declarations: [UserSearchPage]
 })
-export class MediaDisplayPageModule {}
+export class UserSearchPageModule {}

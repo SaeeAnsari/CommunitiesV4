@@ -17,7 +17,7 @@ import { MediaPostService } from '../../providers/media-post-service';
  */
 @Component({
   selector: 'register-user-component',
-  templateUrl: 'register-user-component.html',
+  templateUrl: 'register-user-component.component.html',
   providers: [UserService, MediaPostService]
 })
 export class RegisterUserComponent {
