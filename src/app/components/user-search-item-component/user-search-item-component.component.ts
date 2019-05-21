@@ -9,7 +9,7 @@ import { UserService } from '../../providers/user-service';
  */
 @Component({
   selector: 'user-search-item-component',
-  templateUrl: 'user-search-item-component.html',
+  templateUrl: 'user-search-item-component.component.html',
   providers: [UserService]
 })
 export class UserSearchItemComponent {

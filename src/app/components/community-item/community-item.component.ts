@@ -13,7 +13,7 @@ import {LiveFeedPage} from '../../pages/live-feed/live-feed.page'
  */
 @Component({
   selector: 'community-item',
-  templateUrl: 'community-item.html',
+  templateUrl: 'community-item.component.html',
   providers: [UserService, CommunityService]
 })
 export class CommunityItemComponent implements OnInit {

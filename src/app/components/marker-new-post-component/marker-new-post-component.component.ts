@@ -15,7 +15,7 @@ import { ModalController } from '@ionic/angular';
  */
 @Component({
   selector: 'app-marker-new-post',
-  templateUrl: 'marker-new-post-component.html',
+  templateUrl: 'marker-new-post-component.component.html',
   providers: [UserService]
 })
 export class MarkerNewPostComponent implements OnInit {

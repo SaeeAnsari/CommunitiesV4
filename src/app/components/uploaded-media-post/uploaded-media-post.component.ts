@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
  */
 @Component({
   selector: 'uploaded-media-post',
-  templateUrl: 'uploaded-media-post.html'
+  templateUrl: 'uploaded-media-post.component.html'
 })
 export class UploadedMediaPostComponent implements OnInit{
   ngOnInit(): void {

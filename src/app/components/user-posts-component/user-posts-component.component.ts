@@ -13,7 +13,7 @@ import { ModalController } from '@ionic/angular';
  */
 @Component({
   selector: 'app-user-post',
-  templateUrl: 'user-posts-component.html',
+  templateUrl: 'user-posts-component.component.html',
   providers: [StoryService, EventProvider]
 })
 export class UserPostsComponent implements OnInit {

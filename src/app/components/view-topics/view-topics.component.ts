@@ -12,7 +12,7 @@ import {LiveFeedPage} from '../../pages/live-feed/live-feed.page';
  */
 @Component({
   selector: 'view-topics',
-  templateUrl: 'view-topics.html',
+  templateUrl: 'view-topics.component.html',
   providers: [CommunityService]
 })
 export class ViewTopicsComponent implements OnInit {

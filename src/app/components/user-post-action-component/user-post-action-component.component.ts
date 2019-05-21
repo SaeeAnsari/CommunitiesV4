@@ -18,7 +18,7 @@ import { SocialSharingPopoverComponent } from '../../components/social-sharing-p
 
 @Component({
   selector: 'app-user-post-action',
-  templateUrl: 'user-post-action-component.html',
+  templateUrl: 'user-post-action-component.component.html',
   providers: [StoryService, UserService]
 })
 export class UserPostActionComponent implements OnInit {

@@ -12,7 +12,7 @@ import {LiveFeedPage} from '../../pages/live-feed/live-feed.page';
  */
 @Component({
   selector: 'create-topic',
-  templateUrl: 'create-topic.html',
+  templateUrl: 'create-topic.component.html',
   providers: [CommunityService]
 })
 

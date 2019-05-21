@@ -18,7 +18,7 @@ import { LoadingController, ModalController, NavController } from '@ionic/angula
  */
 @Component({
   selector: 'new-event',
-  templateUrl: 'new-event.html',
+  templateUrl: 'new-event.component.html',
   providers: [MediaPostService, UserService, EventProvider]
 })
 export class NewEventComponent implements OnInit {

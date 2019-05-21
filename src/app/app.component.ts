@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {Platform, NavController, NavParams, ModalController, IonNav } from '@ionic/angular';
+import {Platform, NavController, NavParams, IonNav } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx'
