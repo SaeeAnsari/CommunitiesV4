@@ -35,7 +35,7 @@
                 <ion-label>
                   <i class="fa fa-users"></i> Communities</ion-label>
                 <ion-select [(ngModel)]="optionsModel" multiple="true">
-                  <ion-option *ngFor="let item of userCommunities" value="{{item.id}}" [selected]="item.id == activeCommunity">{{item.name}}</ion-option>
+                  <ion-select-option *ngFor="let item of userCommunities" value="{{item.id}}" [selected]="item.id == activeCommunity">{{item.name}}</ion-select-option>
                 </ion-select>
               </ion-item>
 

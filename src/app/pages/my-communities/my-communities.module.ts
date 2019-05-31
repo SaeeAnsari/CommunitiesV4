@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MyCommunitiesPage } from './my-communities.page';
+import { CommunityItemComponent } from 'src/app/components/community-item/community-item.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MyCommunitiesPage]
+  declarations: [MyCommunitiesPage, CommunityItemComponent]
 })
 export class MyCommunitiesPageModule {}

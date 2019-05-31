@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { CommunityPage } from './community.page';
 
+import {LocalGalleryUploadComponent} from '../../components/local-gallery-upload/local-gallery-upload.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CommunityPage]
+  declarations: [CommunityPage, LocalGalleryUploadComponent]
 })
 export class CommunityPageModule {}

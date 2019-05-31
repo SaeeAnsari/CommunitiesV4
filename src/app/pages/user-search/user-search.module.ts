@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { UserSearchPage } from './user-search.page';
+import { UserSearchItemComponent } from 'src/app/components/user-search-item-component/user-search-item-component.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [UserSearchPage]
+  declarations: [UserSearchPage, UserSearchItemComponent]
 })
 export class UserSearchPageModule {}

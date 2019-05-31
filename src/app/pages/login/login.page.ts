@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  NavController, NavParams, ModalController, Platform, LoadingController } from '@ionic/angular';
+import {  NavController, ModalController, Platform, LoadingController } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { TabsPage } from '../tabs/tabs.page';
 import { LoginComponent } from '../../components/login-component/login-component.component';
@@ -26,16 +26,13 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
   styleUrls: ['./login.page.scss'],
   providers: [UserService, Facebook, ErrorLogServiceProvider]
 })
-export class LoginPage implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+export class LoginPage {
+  
   private userLoaded: boolean = false; //Hack to make sure we only load the user once
 
   constructor(
-    private storage: Storage,
+    private storage: NativeStorage,
     public navCtrl: NavController,
-    public navParams: NavParams,
     public modalCtrl: ModalController,
     private _userService: UserService,
     private fb: Facebook,
@@ -121,7 +118,7 @@ export class LoginPage implements OnInit {
         console.log("RAW got : " + sub)
         if (sub != null && +sub > 0) {
           console.log("Found the User : " + sub);
-          this.storage.set('userID', sub);
+          this.storage.setItem('userID', sub);
           this.ionViewDidLoad();
         }
         else {
@@ -141,7 +138,7 @@ export class LoginPage implements OnInit {
 
           this._userService.RegisterSocialAuthUser(user).subscribe(sub => {
             console.log("loaded :" + sub);
-            this.storage.set('userID', sub);
+            this.storage.setItem('userID', sub);
             this.ionViewDidLoad();
           });
         }
@@ -170,7 +167,7 @@ export class LoginPage implements OnInit {
       console.log("RAW got : " + sub)
       if (sub != null && +sub > 0) {
         console.log("Found the User : " + sub);
-        this.storage.set('userID', sub);
+        this.storage.setItem('userID', sub);
         this.ionViewDidLoad();
       }
       else {
@@ -190,7 +187,7 @@ export class LoginPage implements OnInit {
 
         this._userService.RegisterSocialAuthUser(user2).subscribe(sub => {
           console.log("loaded :" + sub);
-          this.storage.set('userID', sub);
+          this.storage.setItem('userID', sub);
           this.ionViewDidLoad();
         });
       }
@@ -250,7 +247,7 @@ export class LoginPage implements OnInit {
 
   ionViewDidLoad() {
     if (!this.userLoaded) {
-      if (this.storage.get('userID').then(id => {
+      if (this.storage.getItem('userID').then(id => {
         sessionStorage.setItem("userID", id);//Temporary removeit later
         this._userService.getLoggedinInUser().subscribe(s => {
           if (s != null && s.ID > 0) {
@@ -287,6 +284,9 @@ export class LoginPage implements OnInit {
 
 
 
+  async googleLogin2(){
+    console.log("Google Login 2");
+  }
 
 
   async googleLogin() {
@@ -298,6 +298,8 @@ export class LoginPage implements OnInit {
     });
 
     loading.present();
+
+    console.log("starting google login process");
 
     this.googlePlus.login({})
       .then(res => {
@@ -318,7 +320,7 @@ export class LoginPage implements OnInit {
 
           if (sub != null && +sub > 0) {
             console.log("Found the User : " + sub);
-            this.storage.set('userID', sub);
+            this.storage.setItem('userID', sub);
             this.ionViewDidLoad();
           }
           else {
@@ -339,7 +341,7 @@ export class LoginPage implements OnInit {
 
             this._userService.RegisterSocialAuthUser(user).subscribe(sub => {
               console.log("loaded :" + sub);
-              this.storage.set('userID', sub);
+              this.storage.setItem('userID', sub);
               loading.dismiss();
               this.ionViewDidLoad();
             });

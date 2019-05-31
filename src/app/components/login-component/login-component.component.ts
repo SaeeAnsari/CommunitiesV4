@@ -29,7 +29,7 @@ export class LoginComponent {
 
 
   constructor(
-    private storage: Storage,
+    private storage: NativeStorage,
     private _fb: FormBuilder,
     private _user: UserService,
     public nav: NavController,
@@ -64,9 +64,9 @@ export class LoginComponent {
     if (isValid && isValid == true) {
       this._user.LoginUser(model.email, model.password).subscribe(sub => {
         if (sub > 0) {
-          this.storage.set("userID", sub);
+          this.storage.setItem("userID", sub);
           sessionStorage.setItem("userID", sub);//Temporary removeit later
-          this.nav.navigateForward('/tabspage');
+          this.nav.navigateForward('/tabs');
         }
         else{
           this.presentToast("Incorrect Email or Password");

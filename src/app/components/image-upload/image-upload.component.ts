@@ -5,7 +5,7 @@ import { LoadingController } from '@ionic/angular';
 
 
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
-import { File } from '@ionic-native/file';
+import { File } from '@ionic-native/file/ngx';
 
 import { CameraPluginProvider } from '../../providers/camera-plugin/camera-plugin';
 
