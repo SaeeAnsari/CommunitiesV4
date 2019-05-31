@@ -53,8 +53,8 @@ import { VideoUploadComponent } from './components/video-upload/video-upload.com
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { UserPostActionComponent } from './components/user-post-action-component/user-post-action-component.component';
 import { HttpModule } from '@angular/http';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
-
+//import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import {IonicStorageModule} from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -97,6 +97,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     AppRoutingModule, 
     FormsModule, 
     ReactiveFormsModule, 
+    IonicStorageModule.forRoot(),
     HttpModule],
   providers: [
     StatusBar,
@@ -120,7 +121,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     HelperProvider,
     Firebase,
     LaunchNavigator,
-    NativeStorage,
+    //NativeStorage,
     
     AndroidPermissions,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

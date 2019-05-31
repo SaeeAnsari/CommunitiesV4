@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from '@ionic/angular';
 import { UserCommentsComponent } from '../../components/user-comments-component/user-comments-component.component';
 import { StoryService } from '../../providers/story-service';
-import { NativeStorage} from '@ionic-native/native-storage/ngx';
-
+//import { NativeStorage} from '@ionic-native/native-storage/ngx';
+import {Storage} from '@ionic/storage';
 
 
 @Component({

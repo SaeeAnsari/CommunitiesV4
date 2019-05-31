@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { NavController, NavParams, ModalController } from '@ionic/angular';
-import { NativeStorage } from '@ionic-native/native-storage';
-
+//import { NativeStorage } from '@ionic-native/native-storage';
+import {Storage} from '@ionic/storage';
 
 import { Observable } from 'rxjs/Rx';
 import { UserService } from '../../providers/user-service';

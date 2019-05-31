@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  NavController, ModalController, Platform, LoadingController } from '@ionic/angular';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+//import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import {Storage} from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs.page';
 import { LoginComponent } from '../../components/login-component/login-component.component';
 import { RegisterUserComponent } from '../../components/register-user-component/register-user-component.component';
@@ -31,7 +32,7 @@ export class LoginPage {
   private userLoaded: boolean = false; //Hack to make sure we only load the user once
 
   constructor(
-    private storage: NativeStorage,
+    private storage: Storage,
     public navCtrl: NavController,
     public modalCtrl: ModalController,
     private _userService: UserService,
@@ -118,7 +119,7 @@ export class LoginPage {
         console.log("RAW got : " + sub)
         if (sub != null && +sub > 0) {
           console.log("Found the User : " + sub);
-          this.storage.setItem('userID', sub);
+          this.storage.set('userID', sub);
           this.ionViewDidLoad();
         }
         else {
@@ -138,7 +139,7 @@ export class LoginPage {
 
           this._userService.RegisterSocialAuthUser(user).subscribe(sub => {
             console.log("loaded :" + sub);
-            this.storage.setItem('userID', sub);
+            this.storage.set('userID', sub);
             this.ionViewDidLoad();
           });
         }
@@ -167,7 +168,7 @@ export class LoginPage {
       console.log("RAW got : " + sub)
       if (sub != null && +sub > 0) {
         console.log("Found the User : " + sub);
-        this.storage.setItem('userID', sub);
+        this.storage.set('userID', sub);
         this.ionViewDidLoad();
       }
       else {
@@ -187,7 +188,7 @@ export class LoginPage {
 
         this._userService.RegisterSocialAuthUser(user2).subscribe(sub => {
           console.log("loaded :" + sub);
-          this.storage.setItem('userID', sub);
+          this.storage.set('userID', sub);
           this.ionViewDidLoad();
         });
       }
@@ -247,7 +248,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     if (!this.userLoaded) {
-      if (this.storage.getItem('userID').then(id => {
+      if (this.storage.get('userID').then(id => {
         sessionStorage.setItem("userID", id);//Temporary removeit later
         this._userService.getLoggedinInUser().subscribe(s => {
           if (s != null && s.ID > 0) {
@@ -320,7 +321,7 @@ export class LoginPage {
 
           if (sub != null && +sub > 0) {
             console.log("Found the User : " + sub);
-            this.storage.setItem('userID', sub);
+            this.storage.set('userID', sub);
             this.ionViewDidLoad();
           }
           else {
@@ -341,7 +342,7 @@ export class LoginPage {
 
             this._userService.RegisterSocialAuthUser(user).subscribe(sub => {
               console.log("loaded :" + sub);
-              this.storage.setItem('userID', sub);
+              this.storage.set('userID', sub);
               loading.dismiss();
               this.ionViewDidLoad();
             });

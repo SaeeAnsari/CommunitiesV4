@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
-import { NativeStorage} from '@ionic-native/native-storage/ngx';
-
+//import { NativeStorage} from '@ionic-native/native-storage/ngx';
+import {Storage} from '@ionic/storage';
 import { UserLocationPage } from '../user-location/user-location.page';
 
 import {FirebaseMessagingProvider} from '../../providers/firebase-messaging/firebase-messaging'

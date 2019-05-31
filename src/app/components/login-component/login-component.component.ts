@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import {ModalController, NavParams, NavController, ToastController } from '@ionic/angular';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+//import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
+import {Storage} from '@ionic/storage';
+
 import { UserService } from '../../providers/user-service';
+
 
 
 import { TabsPage } from '../../pages/tabs/tabs.page';
@@ -29,7 +33,7 @@ export class LoginComponent {
 
 
   constructor(
-    private storage: NativeStorage,
+    private storage: Storage,
     private _fb: FormBuilder,
     private _user: UserService,
     public nav: NavController,
@@ -64,7 +68,7 @@ export class LoginComponent {
     if (isValid && isValid == true) {
       this._user.LoginUser(model.email, model.password).subscribe(sub => {
         if (sub > 0) {
-          this.storage.setItem("userID", sub);
+          this.storage.set("userID", sub);
           sessionStorage.setItem("userID", sub);//Temporary removeit later
           this.nav.navigateForward('/tabs');
         }
