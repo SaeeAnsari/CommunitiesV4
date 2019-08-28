@@ -17,6 +17,7 @@ import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'local-gallery-upload',
   templateUrl: 'local-gallery-upload.component.html',
+  styleUrls: ['./local-gallery-upload.component.scss'],
   providers: [File]
 })
 export class LocalGalleryUploadComponent implements OnInit {

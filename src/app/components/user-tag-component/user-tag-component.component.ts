@@ -8,7 +8,8 @@ import { Component , Input} from '@angular/core';
  */
 @Component({
   selector: 'app-user-tag',
-  templateUrl: 'user-tag-component.component.html'
+  templateUrl: 'user-tag-component.component.html',
+  styleUrls: ['./user-tag-component.component.scss'],
 })
 export class UserTagComponent  {
 

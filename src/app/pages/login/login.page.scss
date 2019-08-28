@@ -6,6 +6,8 @@
 
 #login_page .container{
   
+  
+
     background-image: url('http://res.cloudinary.com/http-communities-me/image/upload/v1519010324/Resources/Background/LoginBackground.jpg');
    
   
@@ -14,6 +16,7 @@
     
     height: 105vh;
     width: 100vw;
+
   }
   
   #login_page .login-button-container{
@@ -47,17 +50,27 @@
   
     padding: 10px 25px 5px 25px;
     transition: all 0.5s ease 0s;  
+    color: #6b728d;
   }
   
   .social-login-icons{
     width:90px;
     height: 90px;
-   padding-top: 10px;
+   padding-top: 0px;
    margin: 0px;
    border-radius: 10px;
     background-color: #F0F0F0;
+    
+  }
+
+  #spnOR{
+    color: #6b728d
   }
   
+  .social-login-icons ion-icon {
+    font-size: 64px;
+    color: #6b728d;
+  }
   
   #login_page  .login-button-container h2 span { 
      //background:#fff; 
@@ -193,4 +206,6 @@
   .login_form a:hover{
     color: #4751a9;
   }
+  
+
   

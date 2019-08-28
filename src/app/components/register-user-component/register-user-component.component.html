@@ -1,25 +1,22 @@
 <ion-header>
 
-  <ion-toolbar transparent>
 
-    <ion-buttons left>
-        <button ion-button block class="btn btn-link" (click)="closeModal()" icon-left>
-          <ion-icon name="return-left"></ion-icon>Back
-        </button>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+       
+        <ion-button (click)="closeModal()"> 
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+       
       </ion-buttons>
       <ion-title>New Registeration</ion-title>
-  
-
-
-  </ion-toolbar>
+    </ion-toolbar>
 
 </ion-header>
 <ion-content padding>
 
   <form [formGroup]="registerationForm" novalidate (ngSubmit)="saveUser(registerationForm.value, registerationForm.valid)">
     <div class="containerRegister text-center">
-
-
 
       <ion-item>
         <ion-input placeholder="First name" formControlName="firstName" [ngClass]="{'has-error':!registerationForm.controls['firstName'].valid}"></ion-input>
@@ -50,7 +47,9 @@
 
 
       <div class="login_form">
-          <button class="btn btn-info btn-login" type="submit" value="Go" [disabled]="!registerationForm.valid">Go</button>
+
+          
+          <ion-button class="btn btn-info btn-login" shape="block" type="submit" value="Register" [disabled]="!registerationForm.valid">Register</ion-button>
         </div>
 
 

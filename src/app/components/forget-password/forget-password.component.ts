@@ -13,6 +13,7 @@ import { ModalController, NavParams, NavController, ToastController } from '@ion
 @Component({
   selector: 'forget-password',
   templateUrl: 'forget-password.component.html',
+  styleUrls: ['./forget-password.component.scss'],
   providers: [UserService]
 
 })

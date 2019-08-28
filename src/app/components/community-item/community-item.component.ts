@@ -14,6 +14,7 @@ import {LiveFeedPage} from '../../pages/live-feed/live-feed.page'
 @Component({
   selector: 'community-item',
   templateUrl: 'community-item.component.html',
+  styleUrls: ['./community-item.component.scss'],
   providers: [UserService, CommunityService]
 })
 export class CommunityItemComponent implements OnInit {

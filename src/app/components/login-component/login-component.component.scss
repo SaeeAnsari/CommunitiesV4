@@ -22,7 +22,7 @@
 .containerLogin  img {
     padding: 10px 0 50px;
     
-    width: 110px;    
+    width: 200px;    
 }
 
 .btn-login{
@@ -36,6 +36,8 @@
 }
 
 
+
+
 .registerLink a {
     color: #333333;
     display: inline-block;
@@ -43,9 +45,12 @@
     padding: 10px;
     text-decoration: underline;
     transition: all 0.5s ease 0s;
+    
 }
 .registerLink a:hover{
-  color: #4751a9;
+  
+    color: #4751a9;
+
 }
 
 .textArea{

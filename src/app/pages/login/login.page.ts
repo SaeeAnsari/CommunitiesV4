@@ -21,6 +21,7 @@ import { ForgetPasswordComponent } from '../../components/forget-password/forget
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -29,6 +30,8 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 })
 export class LoginPage {
   
+
+
   private userLoaded: boolean = false; //Hack to make sure we only load the user once
 
   constructor(
@@ -214,7 +217,10 @@ export class LoginPage {
 
     loginRegisterModal.onDidDismiss().then(data => {
 
+      console.log("Registration Data Object: " + JSON.stringify(data));
+
       if (data) {
+
         if (data.data.isRegistering) {
           this.loadRegistrationModal();
         }
@@ -223,7 +229,7 @@ export class LoginPage {
         }
       }
     });
-    loginRegisterModal.present();
+    return await loginRegisterModal.present();
   }
 
   async loadRegistrationModal() {

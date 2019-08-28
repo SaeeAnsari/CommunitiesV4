@@ -17,6 +17,7 @@ import {TabsPage} from '../../pages/tabs/tabs.page';
 @Component({
   selector: 'community-topic-marker',
   templateUrl: 'community-topic-marker.component.html',
+  styleUrls: ['./community-topic-marker.component.scss'],
   providers: [CommunityService]
 })
 export class CommunityTopicMarkerComponent implements OnInit {

@@ -12,6 +12,7 @@ import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-na
 @Component({
   selector: 'event-post',
   templateUrl: 'event-post.component.html',
+  styleUrls: ['./event-post.component.scss'],
   providers: [InAppBrowser]
 })
 export class EventPostComponent implements OnInit {

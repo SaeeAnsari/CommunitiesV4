@@ -32,6 +32,7 @@ import { FirebaseMessagingProvider } from '../../providers/firebase-messaging/fi
 @Component({
   selector: 'new-comment-component',
   templateUrl: 'new-comment-component.component.html',
+  styleUrls: ['./new-comment-component.component.scss'],
   providers: [UserService, FirebaseMessagingProvider, StoryService, MediaPostService, CommunityService, OpenGraphServiceProvider, CameraPluginProvider]
 })
 export class NewCommentComponent implements OnInit {

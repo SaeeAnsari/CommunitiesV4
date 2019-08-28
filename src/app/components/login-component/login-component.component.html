@@ -1,44 +1,48 @@
 <ion-header>
 
-  <ion-toolbar transparent>
-
-    <ion-buttons left>
-      <button ion-button block class="btn btn-link" (click)="closeModal()" icon-left>
-        <ion-icon name="return-left"></ion-icon>Back
-      </button>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     
+      <ion-button (click)="closeModal()"> 
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+     
     </ion-buttons>
     <ion-title>Login</ion-title>
-
   </ion-toolbar>
-
 
 </ion-header>
 <ion-content padding>
   <form [formGroup]="loginForm" novalidate (ngSubmit)="loginUser(loginForm.value, loginForm.valid)">
 
-    <div class="containerLogin text-center">
+    <div class="containerLogin text-center container">
       <a href="#">
         <img src="assets/images/login/logo.png" alt="logo">
       </a>
 
       <ion-item>
-        <ion-label color="primary" stacked>Email</ion-label>
-        <ion-input type="email" placeholder="Email" formControlName="email" [ngClass]="{'has-error':!loginForm.controls['email'].valid}"></ion-input>
+        <ion-label color="primary" position="stacked">Email</ion-label>
+        <ion-input type="email" placeholder="Email" formControlName="email"
+          [ngClass]="{'has-error':!loginForm.controls['email'].valid}"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="primary" stacked>Password</ion-label>
-        <ion-input type="password" placeholder="Password" formControlName="password" [ngClass]="{'has-error':!loginForm.controls['password'].valid}"></ion-input>
+        <ion-label color="primary" position="stacked">Password</ion-label>
+        <ion-input type="password" placeholder="Password" formControlName="password"
+          [ngClass]="{'has-error':!loginForm.controls['password'].valid}"></ion-input>
       </ion-item>
 
       <div class="registerLink">
-        <a href="#" (click)="registerClicked()">Register with us</a>
-        <a href="#" (click)="forgetPassword($event)">Forgot Password?</a>
+        <a  (click)="registerClicked()">Register with us</a>
+        <a  (click)="forgetPassword($event)">Forgot Password?</a>
       </div>
 
 
       <div class="login_form">
-        <button class="btn btn-info" type="submit" value="Login" [disabled]="!loginForm.valid">Login</button>
+
+
+
+        <ion-button class="btn btn-info" type="submit" shape="block" value="Login" [disabled]="!loginForm.valid">Login</ion-button>
       </div>
     </div>
   </form>

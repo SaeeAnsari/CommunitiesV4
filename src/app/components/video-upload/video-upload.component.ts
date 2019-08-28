@@ -18,7 +18,8 @@ import { BaseLinkProvider } from '../../providers/base-link/base-link';
  */
 @Component({
   selector: 'video-upload',
-  templateUrl: 'video-upload.component.html'
+  templateUrl: 'video-upload.component.html',
+  styleUrls: ['./video-upload.component.scss'],
 })
 export class VideoUploadComponent {
 

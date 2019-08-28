@@ -23,6 +23,7 @@ import { PopoverController } from '@ionic/angular';
 @Component({
   selector: 'login-component',
   templateUrl: 'login-component.component.html',
+  styleUrls: ['./login-component.component.scss'],
   providers: [UserService]
 })
 export class LoginComponent {
@@ -30,7 +31,7 @@ export class LoginComponent {
   text: string;
 
   public loginForm: FormGroup;
-
+  public isRegistering: boolean;
 
   constructor(
     private storage: Storage,

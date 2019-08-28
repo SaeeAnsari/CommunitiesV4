@@ -9,6 +9,7 @@ import { LiveFeedPage } from '../../pages/live-feed/live-feed.page';
 @Component({
   selector: 'communities-slides',
   templateUrl: 'communities-slides.html',
+  styleUrls: ['./communities-slides.scss'],
   providers: [CommunityService, UserService]
 })
 export class CommunitiesSlidesComponent implements OnInit {

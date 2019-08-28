@@ -1,35 +1,36 @@
 <ion-content>
-  <div id="login_page" class="">
+  <div id="login_page" class="container">
     <div class="container text-center">
       <div class="login-red-background">
         <div class="login-button-container">
           <a href="#">
             <img id="logoLogin" src="../../../assets/images/login/logo.png" alt="logo">
           </a>
+
+
+
+
           <div class="soical_login">
 
             <a href="#" (click)="facebookLogin()">
               <!--<img id="facebookIcon" src="assets/images/login/FacebookIcon2.png" alt="FB">-->
 
-              <div class="social-login-icons">&nbsp;
-                <i class="fa fa-facebook fa-4x"></i>
-                faceboook
-              </div> 
+              <div class="social-login-icons">
+                <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+                Faceboook
+              </div>
 
             </a>
 
             <a class="google_plus" href="#" (click)="googleLogin2()">
-              <div class="social-login-icons">&nbsp;
-                <i class="fa fa-google-plus fa-4x"></i>
+              <div class="social-login-icons">
+                <ion-icon name="logo-googleplus"></ion-icon>
                 Google
-              </div> 
-
-<!--              <img src="assets/images/login/GoogleIcon2.png" alt="Google">
--->    
-</a>
+              </div>
+            </a>
           </div>
           <h2>
-            <span>OR</span>
+            <span id="spnOR">OR</span>
           </h2>
 
           <div class="login_form">

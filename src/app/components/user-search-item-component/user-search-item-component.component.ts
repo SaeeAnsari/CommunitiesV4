@@ -10,6 +10,7 @@ import { UserService } from '../../providers/user-service';
 @Component({
   selector: 'user-search-item-component',
   templateUrl: 'user-search-item-component.component.html',
+  styleUrls: ['./user-search-item-component.component.scss'],
   providers: [UserService]
 })
 export class UserSearchItemComponent {

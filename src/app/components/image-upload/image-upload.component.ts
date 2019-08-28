@@ -18,6 +18,7 @@ import { CameraPluginProvider } from '../../providers/camera-plugin/camera-plugi
 @Component({
   selector: 'image-upload',
   templateUrl: 'image-upload.component.html',
+  styleUrls: ['./image-upload.component.scss'],
   providers: [CameraPluginProvider]
 })
 export class ImageUploadComponent implements OnInit {

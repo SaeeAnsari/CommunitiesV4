@@ -16,6 +16,7 @@ import { ID_Name_Pair } from '../../interfaces/id-name-list';
 @Component({
   selector: 'social-sharing-popover',
   templateUrl: 'social-sharing-popover.component.html',
+  styleUrls: ['./social-sharing-popover.component.scss'],
   providers: [SocialSharing, StoryService, CommunityService, UserService]
 })
 
