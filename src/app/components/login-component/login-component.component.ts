@@ -72,6 +72,7 @@ export class LoginComponent {
           this.storage.set("userID", sub);
           sessionStorage.setItem("userID", sub);//Temporary removeit later
           this.nav.navigateForward('/tabs');
+          this.vc.dismiss();
         }
         else{
           this.presentToast("Incorrect Email or Password");
